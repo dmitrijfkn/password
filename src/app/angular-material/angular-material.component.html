@@ -1,0 +1,21 @@
+<div class="example-container">
+  <mat-form-field
+    type="password"
+    (input)="checkPasswordStrength()"
+  >
+
+    <mat-label>Enter your password</mat-label>
+    <input matInput [formControl]="password" required [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    @if (password.invalid) {
+      <mat-error>{{ getErrorMessage() }}</mat-error>
+    }
+
+    <mat-hint align="start"
+              *ngIf="!password.invalid"
+              [ngStyle]="{color: hintColor}">
+      {{ 'Password is ' + passwordStrength }}
+    </mat-hint>
+
+  </mat-form-field>
+</div>
