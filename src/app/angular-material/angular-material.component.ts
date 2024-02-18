@@ -2,8 +2,7 @@ import {Component} from '@angular/core';
 import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {NgIf, NgStyle} from "@angular/common";
-import {ThemePalette} from "@angular/material/core";
+import {NgClass, NgIf, NgStyle} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
 
 @Component({
@@ -11,7 +10,7 @@ import {MatIcon} from "@angular/material/icon";
   templateUrl: './angular-material.component.html',
   styleUrl: './angular-material.component.css',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, NgIf, NgStyle, MatIcon],
+  imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, NgIf, NgStyle, MatIcon, NgClass],
 })
 export class AngularMaterialComponent {
   password = new FormControl('', [Validators.required, Validators.minLength(8)]);
@@ -24,8 +23,8 @@ export class AngularMaterialComponent {
     return this.password.hasError('minlength') ? 'Password shouldn\'t be shorter then 8 symbols' : '';
   }
 
-  passwordStrength: 'empty' | 'lessThan8' | 'easy' | 'medium' | 'strong' = 'empty';
-
+  passwordStrength: "empty" | "lessThan8" | "easy" | "medium" | "strong" = "empty";
+psafdfas:string="empty"
   hide = true;
   hintColor: string = "#ff0000";
 

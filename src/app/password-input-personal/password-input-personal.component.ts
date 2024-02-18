@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgStyle} from "@angular/common";
+import {NgClass, NgStyle} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -7,7 +7,8 @@ import {FormsModule} from "@angular/forms";
   standalone: true,
   imports: [
     NgStyle,
-    FormsModule
+    FormsModule,
+    NgClass
   ],
   templateUrl: './password-input-personal.component.html',
   styleUrl: './password-input-personal.component.css'

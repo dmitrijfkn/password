@@ -6,14 +6,14 @@
 
     <mat-label>Enter your password</mat-label>
     <input matInput [formControl]="password" required [type]="hide ? 'password' : 'text'">
-    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
     @if (password.invalid) {
       <mat-error>{{ getErrorMessage() }}</mat-error>
     }
 
     <mat-hint align="start"
               *ngIf="!password.invalid"
-              [ngStyle]="{color: hintColor}">
+              [ngClass]=passwordStrength>
       {{ 'Password is ' + passwordStrength }}
     </mat-hint>
 
